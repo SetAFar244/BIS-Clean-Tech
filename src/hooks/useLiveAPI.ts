@@ -18,7 +18,24 @@ export function useLiveAPI() {
     setIsConnecting(true);
     setError(null);
 
+    // Create AudioContext synchronously on click to avoid losing user gesture context
+    const audioCtx = new AudioContext({ sampleRate: 16000 });
+    audioContextRef.current = audioCtx;
+    const recorder = new AudioRecorder(audioCtx);
+    const player = new AudioPlayer(audioCtx);
+    
+    player.onPlayStart = () => setIsSpeaking(true);
+    player.onPlayEnd = () => setIsSpeaking(false);
+
+    recorderRef.current = recorder;
+    playerRef.current = player;
+
     try {
+      // Resume audio context in case it was suspended
+      if (audioCtx.state === 'suspended') {
+        await audioCtx.resume();
+      }
+
       // Check for API key selection
       // @ts-ignore
       if (window.aistudio && typeof window.aistudio.hasSelectedApiKey === 'function') {
@@ -33,17 +50,6 @@ export function useLiveAPI() {
 
       // Create a fresh instance of GoogleGenAI to pick up the newly selected key
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
-      const audioCtx = new AudioContext({ sampleRate: 16000 });
-      audioContextRef.current = audioCtx;
-      const recorder = new AudioRecorder(audioCtx);
-      const player = new AudioPlayer(audioCtx);
-      
-      player.onPlayStart = () => setIsSpeaking(true);
-      player.onPlayEnd = () => setIsSpeaking(false);
-
-      recorderRef.current = recorder;
-      playerRef.current = player;
 
       const systemInstruction = `You are Miriam, the highly capable, friendly, and professional AI receptionist for Brown's IT Solutions in Atlanta. 
 You sound super human, warm, and engaging. 
