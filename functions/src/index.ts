@@ -1,16 +1,7 @@
-import * as functions from "firebase-functions";
+import { onRequest } from "firebase-functions/v2/https";
 import * as nodemailer from "nodemailer";
 
-export const sendEmail = functions.https.onRequest(async (req, res) => {
-  // Enable CORS
-  res.set('Access-Control-Allow-Origin', '*');
-  if (req.method === 'OPTIONS') {
-    res.set('Access-Control-Allow-Methods', 'POST');
-    res.set('Access-Control-Allow-Headers', 'Content-Type');
-    res.status(204).send('');
-    return;
-  }
-
+export const sendEmail = onRequest({ cors: true }, async (req, res) => {
   if (req.method !== 'POST') {
     res.status(405).send('Method Not Allowed');
     return;
@@ -19,8 +10,6 @@ export const sendEmail = functions.https.onRequest(async (req, res) => {
   try {
     const { customerName, customerEmail, customerPhone, service, date, time } = req.body;
 
-    // In Firebase Functions, environment variables are loaded automatically from a .env file 
-    // placed in the functions directory, or configured via Firebase Secret Manager.
     const smtpHost = process.env.SMTP_HOST;
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
