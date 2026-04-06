@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null && (
+        (request.auth.token.email in ['tonyb@brownsitsolutions.services', 'brownsitsolutionsservices@gmail.com'] && request.auth.token.email_verified == true) ||
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'
+      );
+    }
+
+    match /appointments/{appointmentId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+    match /public_slots/{slotId} {
+      allow read, create: if true;
+      allow update, delete: if isAdmin();
+    }
+    match /users/{userId} {
+      allow read, write: if isAdmin();
+    }
+    match /insights/{insightId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

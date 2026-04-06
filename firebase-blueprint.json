@@ -1,0 +1,58 @@
+{
+  "entities": {
+    "Appointment": {
+      "title": "Appointment",
+      "description": "A booked appointment for IT services",
+      "type": "object",
+      "properties": {
+        "customerName": { "type": "string", "description": "Name of the customer" },
+        "customerEmail": { "type": "string", "description": "Email of the customer" },
+        "customerPhone": { "type": "string", "description": "Phone number of the customer" },
+        "service": { "type": "string", "description": "The IT service requested" },
+        "date": { "type": "string", "description": "Date of the appointment in YYYY-MM-DD format" },
+        "time": { "type": "string", "description": "Time of the appointment in HH:MM format" },
+        "status": { "type": "string", "enum": ["scheduled", "completed", "cancelled"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["customerName", "customerEmail", "customerPhone", "service", "date", "time", "status", "createdAt"]
+    },
+    "User": {
+      "title": "User",
+      "description": "An admin user",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin"] }
+      },
+      "required": ["email", "role"]
+    },
+    "Insight": {
+      "title": "Insight",
+      "description": "A blog post or insight article",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "author": { "type": "string" },
+        "featuredImage": { "type": "string" },
+        "publishedAt": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["draft", "published"] }
+      },
+      "required": ["title", "content", "author", "featuredImage", "publishedAt", "status"]
+    }
+  },
+  "firestore": {
+    "/appointments/{appointmentId}": {
+      "schema": "Appointment",
+      "description": "Stores all booked appointments"
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Stores admin users"
+    },
+    "/insights/{insightId}": {
+      "schema": "Insight",
+      "description": "Stores all insights and blog posts"
+    }
+  }
+}

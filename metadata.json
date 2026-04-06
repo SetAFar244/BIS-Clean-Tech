@@ -1,0 +1,7 @@
+{
+  "name": "Brown's IT Solutions",
+  "description": "AI Voice Agent for Brown's IT Solutions in Atlanta.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
