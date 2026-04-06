@@ -36,7 +36,7 @@ export function useLiveAPI() {
         await audioCtx.resume();
       }
 
-      // Check for API key selection
+      // 1. Check for API key selection (AI Studio environment)
       // @ts-ignore
       if (window.aistudio && typeof window.aistudio.hasSelectedApiKey === 'function') {
         // @ts-ignore
@@ -44,12 +44,33 @@ export function useLiveAPI() {
         if (!hasKey) {
           // @ts-ignore
           await window.aistudio.openSelectKey();
-          // We assume they selected a key if the promise resolves
         }
       }
 
-      // Create a fresh instance of GoogleGenAI to pick up the newly selected key
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      // 2. Validate API Key
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey || apiKey === 'undefined' || apiKey === '') {
+        throw new Error("GEMINI_API_KEY is missing! Make sure your .env file is in the root folder and you ran 'npm run build'.");
+      }
+
+      // 3. Request microphone immediately to preserve user gesture
+      let isSessionOpen = false;
+      await recorder.start((base64Data) => {
+        if (isSessionOpen && sessionRef.current) {
+          sessionRef.current.then((session: any) => {
+            try {
+              session.sendRealtimeInput({
+                audio: { data: base64Data, mimeType: 'audio/pcm;rate=16000' }
+              });
+            } catch (e) {
+              console.warn("Failed to send audio chunk", e);
+            }
+          });
+        }
+      });
+
+      // 4. Connect to Gemini Live API
+      const ai = new GoogleGenAI({ apiKey });
 
       const systemInstruction = `You are Miriam, the highly capable, friendly, and professional AI receptionist for Brown's IT Solutions in Atlanta. 
 You sound super human, warm, and engaging. 
@@ -113,15 +134,9 @@ Keep your responses concise, conversational, and helpful. Do not sound robotic.`
         },
         callbacks: {
           onopen: () => {
+            isSessionOpen = true;
             setIsConnected(true);
             setIsConnecting(false);
-            recorder.start((base64Data) => {
-              sessionPromise.then(session => {
-                session.sendRealtimeInput({
-                  audio: { data: base64Data, mimeType: 'audio/pcm;rate=16000' }
-                });
-              });
-            });
           },
           onmessage: async (message: LiveServerMessage) => {
             const base64Audio = message.serverContent?.modelTurn?.parts[0]?.inlineData?.data;
@@ -163,22 +178,18 @@ Keep your responses concise, conversational, and helpful. Do not sound robotic.`
             }
           },
           onclose: () => {
+            isSessionOpen = false;
             setIsConnected(false);
             setIsConnecting(false);
             cleanup();
           },
           onerror: (err) => {
             console.error("Live API Error:", err);
+            isSessionOpen = false;
             
             // Handle permission error specifically by resetting key selection state
             if (err instanceof Error && err.message.includes("The caller does not have permission")) {
-              setError("API Key permission denied. Please select a valid paid Google Cloud API key.");
-              // Force re-selection next time
-              // @ts-ignore
-              if (window.aistudio && typeof window.aistudio.openSelectKey === 'function') {
-                // @ts-ignore
-                window.aistudio.openSelectKey().catch(console.error);
-              }
+              setError("API Key permission denied. Please check your GEMINI_API_KEY.");
             } else {
               setError(err instanceof Error ? err.message : "An error occurred");
             }
