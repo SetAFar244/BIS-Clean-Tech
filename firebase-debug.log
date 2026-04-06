@@ -1,0 +1,399 @@
+[debug] [2026-04-06T15:17:28.218Z] ----------------------------------------------------------------------
+[debug] [2026-04-06T15:17:28.220Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\tonyb\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2026-04-06T15:17:28.220Z] CLI Version:   15.13.0
+[debug] [2026-04-06T15:17:28.221Z] Platform:      win32
+[debug] [2026-04-06T15:17:28.221Z] Node Version:  v24.14.0
+[debug] [2026-04-06T15:17:28.221Z] Time:          Mon Apr 06 2026 11:17:28 GMT-0400 (Eastern Daylight Time)
+[debug] [2026-04-06T15:17:28.221Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-06T15:17:29.473Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-06T15:17:29.474Z] > authorizing via signed-in user (brownsitsolutionsservices@gmail.com)
+[debug] [2026-04-06T15:17:29.474Z] [iam] checking project ai-studio-applet-webapp-e38af for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-04-06T15:17:29.475Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:29.475Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:29.476Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions [none]
+[debug] [2026-04-06T15:17:29.476Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:17:29.476Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-06T15:17:29.732Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions 200
+[debug] [2026-04-06T15:17:29.733Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-06T15:17:29.733Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:29.733Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:29.733Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/serviceAccounts/ai-studio-applet-webapp-e38af@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-04-06T15:17:29.733Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/serviceAccounts/ai-studio-applet-webapp-e38af@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-04-06T15:17:29.835Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/serviceAccounts/ai-studio-applet-webapp-e38af@appspot.gserviceaccount.com:testIamPermissions 404
+[debug] [2026-04-06T15:17:29.835Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/serviceAccounts/ai-studio-applet-webapp-e38af@appspot.gserviceaccount.com:testIamPermissions {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2026-04-06T15:17:29.835Z] [functions] service account IAM check errored, deploy may fail: Request to https://iam.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/serviceAccounts/ai-studio-applet-webapp-e38af@appspot.gserviceaccount.com:testIamPermissions had HTTP Error: 404, Unknown service account {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://iam.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/serviceAccounts/ai-studio-applet-webapp-e38af@appspot.gserviceaccount.com:testIamPermissions had HTTP Error: 404, Unknown service account","status":404}
+[debug] [2026-04-06T15:17:29.836Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:29.836Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:29.836Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ai-studio-applet-webapp-e38af [none]
+[debug] [2026-04-06T15:17:30.062Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ai-studio-applet-webapp-e38af 200
+[debug] [2026-04-06T15:17:30.062Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ai-studio-applet-webapp-e38af {"projectId":"ai-studio-applet-webapp-e38af","projectNumber":"687718948845","displayName":"ai-studio-applet-webapp-e38af","name":"projects/ai-studio-applet-webapp-e38af","resources":{"hostingSite":"ai-studio-applet-webapp-e38af"},"state":"ACTIVE","etag":"1_fd887d96-1726-49c1-b318-517483edc217"}
+[info] 
+[info] === Deploying to 'ai-studio-applet-webapp-e38af'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script. 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-04-06T15:17:34.956Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:34.957Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:34.957Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firestore.googleapis.com [none]
+[debug] [2026-04-06T15:17:34.957Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firestore.googleapis.com  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:17:35.404Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firestore.googleapis.com 200
+[debug] [2026-04-06T15:17:35.404Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firestore.googleapis.com [omitted]
+[info] +  firestore: required API firestore.googleapis.com is enabled 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-04-06T15:17:35.409Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:35.409Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:35.409Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/databases/(default) [none]
+[debug] [2026-04-06T15:17:35.763Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/databases/(default) 404
+[debug] [2026-04-06T15:17:35.763Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/databases/(default) {"error":{"code":404,"message":"Project 'ai-studio-applet-webapp-e38af' or database '(default)' does not exist.","status":"NOT_FOUND"}}
+[info] i  firestore: Creating the new Firestore database (default)... 
+[debug] [2026-04-06T15:17:35.764Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:35.764Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:35.764Z] >>> [apiv2][query] POST https://firestore.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/databases databaseId=%28default%29
+[debug] [2026-04-06T15:17:35.764Z] >>> [apiv2][body] POST https://firestore.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/databases {"locationId":"nam5","type":"FIRESTORE_NATIVE","databaseEdition":"STANDARD","deleteProtectionState":"DELETE_PROTECTION_DISABLED","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED"}
+[debug] [2026-04-06T15:17:38.094Z] <<< [apiv2][status] POST https://firestore.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/databases 200
+[debug] [2026-04-06T15:17:38.094Z] <<< [apiv2][body] POST https://firestore.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/databases {"name":"projects/ai-studio-applet-webapp-e38af/databases/(default)/operations/lT8sTDnu3oCgSZxVSHl1zBAqNW1hbgQiBRADnoSroBAGzs-dkQgMCiga","metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.CreateDatabaseMetadata"},"done":true,"response":{"@type":"type.googleapis.com/google.firestore.admin.v1.Database","name":"projects/ai-studio-applet-webapp-e38af/databases/(default)","uid":"cc757948-559c-49a0-80de-ee394c2c3f95","createTime":"2026-04-06T15:17:37.868292Z","updateTime":"2026-04-06T15:17:37.868292Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-04-06T15:17:37.868292Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":false,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"II3FhtbC2ZMDMISMhdbC2ZMD"}}
+[debug] [2026-04-06T15:17:38.095Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:38.095Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:38.095Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/databases/(default)/operations/lT8sTDnu3oCgSZxVSHl1zBAqNW1hbgQiBRADnoSroBAGzs-dkQgMCiga [none]
+[debug] [2026-04-06T15:17:38.221Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/databases/(default)/operations/lT8sTDnu3oCgSZxVSHl1zBAqNW1hbgQiBRADnoSroBAGzs-dkQgMCiga 200
+[debug] [2026-04-06T15:17:38.221Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/databases/(default)/operations/lT8sTDnu3oCgSZxVSHl1zBAqNW1hbgQiBRADnoSroBAGzs-dkQgMCiga {"name":"projects/ai-studio-applet-webapp-e38af/databases/(default)/operations/lT8sTDnu3oCgSZxVSHl1zBAqNW1hbgQiBRADnoSroBAGzs-dkQgMCiga","metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.CreateDatabaseMetadata"},"done":true,"response":{"@type":"type.googleapis.com/google.firestore.admin.v1.Database","name":"projects/ai-studio-applet-webapp-e38af/databases/(default)","uid":"cc757948-559c-49a0-80de-ee394c2c3f95","createTime":"2026-04-06T15:17:37.868292Z","updateTime":"2026-04-06T15:17:37.868292Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-04-06T15:17:37.868292Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":false,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IPjJjtbC2ZMDMISMhdbC2ZMD"}}
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-04-06T15:17:38.222Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:38.222Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:38.222Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:test [none]
+[debug] [2026-04-06T15:17:38.223Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:test [omitted]
+[debug] [2026-04-06T15:17:38.519Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:test 200
+[debug] [2026-04-06T15:17:38.519Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-04-06T15:17:38.521Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:38.521Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:38.521Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudresourcemanager.googleapis.com [none]
+[debug] [2026-04-06T15:17:38.521Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudresourcemanager.googleapis.com  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:17:38.834Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudresourcemanager.googleapis.com 200
+[debug] [2026-04-06T15:17:38.834Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudresourcemanager.googleapis.com [omitted]
+[debug] [2026-04-06T15:17:38.838Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:38.838Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:38.838Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af [none]
+[debug] [2026-04-06T15:17:39.035Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af 200
+[debug] [2026-04-06T15:17:39.035Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af {"projectNumber":"687718948845","projectId":"ai-studio-applet-webapp-e38af","lifecycleState":"ACTIVE","name":"ai-studio-applet-webapp-e38af","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-03-21T20:55:26.864Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2026-04-06T15:17:39.038Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:39.038Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:39.038Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:39.038Z] Checked if tokens are valid: true, expires at: 1775491527123
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2026-04-06T15:17:39.039Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:39.039Z] Checked if tokens are valid: true, expires at: 1775491527123
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-04-06T15:17:39.039Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:39.039Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:39.039Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-04-06T15:17:39.039Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudfunctions.googleapis.com  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:17:39.040Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/runtimeconfig.googleapis.com [none]
+[debug] [2026-04-06T15:17:39.040Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/runtimeconfig.googleapis.com  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:17:39.042Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudbuild.googleapis.com [none]
+[debug] [2026-04-06T15:17:39.042Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudbuild.googleapis.com  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:17:39.043Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/artifactregistry.googleapis.com [none]
+[debug] [2026-04-06T15:17:39.043Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/artifactregistry.googleapis.com  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:17:39.290Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudfunctions.googleapis.com 200
+[debug] [2026-04-06T15:17:39.290Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudfunctions.googleapis.com [omitted]
+[warn] !  functions: missing required API cloudfunctions.googleapis.com. Enabling now... 
+[debug] [2026-04-06T15:17:39.290Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:39.290Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:39.291Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2026-04-06T15:17:39.291Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudfunctions.googleapis.com:enable  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:17:39.348Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/artifactregistry.googleapis.com 200
+[debug] [2026-04-06T15:17:39.348Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2026-04-06T15:17:39.354Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudbuild.googleapis.com 200
+[debug] [2026-04-06T15:17:39.354Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2026-04-06T15:17:39.377Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/runtimeconfig.googleapis.com 200
+[debug] [2026-04-06T15:17:39.377Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2026-04-06T15:17:39.849Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2026-04-06T15:17:39.849Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2026-04-06T15:17:49.869Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:49.870Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:49.870Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ai-studio-applet-webapp-e38af/adminSdkConfig [none]
+[debug] [2026-04-06T15:17:50.109Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ai-studio-applet-webapp-e38af/adminSdkConfig 200
+[debug] [2026-04-06T15:17:50.109Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ai-studio-applet-webapp-e38af/adminSdkConfig {"projectId":"ai-studio-applet-webapp-e38af","storageBucket":"ai-studio-applet-webapp-e38af.firebasestorage.app"}
+[debug] [2026-04-06T15:17:50.110Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:50.110Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:50.110Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ai-studio-applet-webapp-e38af/configs [none]
+[debug] [2026-04-06T15:17:50.349Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ai-studio-applet-webapp-e38af/configs 200
+[debug] [2026-04-06T15:17:50.349Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ai-studio-applet-webapp-e38af/configs {}
+[debug] [2026-04-06T15:17:50.350Z] Validating nodejs source
+[warn] !  functions: Runtime Node.js 20 will be deprecated on 2026-04-30 and will be decommissioned on 2026-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-04-06T15:17:51.145Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^5.0.0",
+    "nodemailer": "^8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/nodemailer": "^8.0.0"
+  },
+  "private": true
+}
+[debug] [2026-04-06T15:17:51.146Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-04-06T15:17:51.147Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-04-06T15:17:51.155Z] Found firebase-functions binary at 'X:\CloudNexus\BIS Clean Tech\BIS-Clean-Tech\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8554
+
+[debug] [2026-04-06T15:17:51.633Z] Got response from /__/functions.yaml {"endpoints":{"sendEmail":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"sendEmail"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-04-06T15:17:55.669Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:55.669Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:55.669Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firebaseextensions.googleapis.com [none]
+[debug] [2026-04-06T15:17:55.669Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firebaseextensions.googleapis.com  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:17:56.005Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firebaseextensions.googleapis.com 200
+[debug] [2026-04-06T15:17:56.005Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firebaseextensions.googleapis.com [omitted]
+[warn] !  extensions: missing required API firebaseextensions.googleapis.com. Enabling now... 
+[debug] [2026-04-06T15:17:56.005Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:56.006Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:17:56.006Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firebaseextensions.googleapis.com:enable [none]
+[debug] [2026-04-06T15:17:56.006Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firebaseextensions.googleapis.com:enable  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:17:56.619Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firebaseextensions.googleapis.com:enable 200
+[debug] [2026-04-06T15:17:56.619Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/services/firebaseextensions.googleapis.com:enable [omitted]
+[debug] [2026-04-06T15:18:06.624Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-06T15:18:06.624Z] > authorizing via signed-in user (brownsitsolutionsservices@gmail.com)
+[debug] [2026-04-06T15:18:06.624Z] [iam] checking project ai-studio-applet-webapp-e38af for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-04-06T15:18:06.624Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:06.624Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:06.624Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions [none]
+[debug] [2026-04-06T15:18:06.624Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:18:06.624Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-04-06T15:18:06.740Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions 200
+[debug] [2026-04-06T15:18:06.740Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-04-06T15:18:06.740Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:06.740Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:06.741Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/ai-studio-applet-webapp-e38af/instances pageSize=100&pageToken=
+[debug] [2026-04-06T15:18:08.479Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/ai-studio-applet-webapp-e38af/instances 200
+[debug] [2026-04-06T15:18:08.479Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/ai-studio-applet-webapp-e38af/instances {}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged X:\CloudNexus\BIS Clean Tech\BIS-Clean-Tech\functions (34.18 KB) for uploading 
+[debug] [2026-04-06T15:18:08.512Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:08.512Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:08.512Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/-/functions [none]
+[debug] [2026-04-06T15:18:09.183Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/-/functions 200
+[debug] [2026-04-06T15:18:09.183Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/-/functions {}
+[debug] [2026-04-06T15:18:09.184Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:09.184Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:09.184Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ai-studio-applet-webapp-e38af/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2026-04-06T15:18:09.630Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ai-studio-applet-webapp-e38af/locations/-/functions 200
+[debug] [2026-04-06T15:18:09.630Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ai-studio-applet-webapp-e38af/locations/-/functions {}
+[debug] [2026-04-06T15:18:09.633Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:09.633Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:09.633Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af [none]
+[debug] [2026-04-06T15:18:09.730Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af 200
+[debug] [2026-04-06T15:18:09.730Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af {"projectNumber":"687718948845","projectId":"ai-studio-applet-webapp-e38af","lifecycleState":"ACTIVE","name":"ai-studio-applet-webapp-e38af","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-03-21T20:55:26.864Z"}
+[debug] [2026-04-06T15:18:09.732Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:09.732Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:09.732Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ai-studio-applet-webapp-e38af/versions [none]
+[debug] [2026-04-06T15:18:09.732Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ai-studio-applet-webapp-e38af/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-04-06T15:18:11.407Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ai-studio-applet-webapp-e38af/versions 200
+[debug] [2026-04-06T15:18:11.407Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ai-studio-applet-webapp-e38af/versions {"name":"projects/687718948845/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-04-06T15:18:11.407Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:11.407Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:11.407Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases pageSize=10&pageToken=
+[debug] [2026-04-06T15:18:11.624Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases 200
+[debug] [2026-04-06T15:18:11.624Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases {"releases":[{"name":"projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore/ai-studio-698ece7c-d2c0-4bcc-9689-79993084dbd6","rulesetName":"projects/ai-studio-applet-webapp-e38af/rulesets/3ee2c41e-514b-4bdf-8d60-3b01ba16801e","createTime":"2026-03-21T20:56:46.322360Z","updateTime":"2026-03-24T19:35:08.827259Z"},{"name":"projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore/ai-studio-9c68b882-e72f-4f9d-b077-bda06f5adba4","rulesetName":"projects/ai-studio-applet-webapp-e38af/rulesets/9c759b1a-fa05-4132-baf2-b07b3b4cf912","createTime":"2026-04-05T17:31:37.187448Z","updateTime":"2026-04-05T19:24:33.616596Z"},{"name":"projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore/ai-studio-f905e6a9-2900-4948-b422-f1a1d218df73","rulesetName":"projects/ai-studio-applet-webapp-e38af/rulesets/d4dce698-2e86-4643-82bf-b57fc2253ff3","createTime":"2026-04-01T17:04:36.093789Z","updateTime":"2026-04-02T16:20:27.851902Z"}]}
+[debug] [2026-04-06T15:18:11.637Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:11.637Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:11.637Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/rulesets/9c759b1a-fa05-4132-baf2-b07b3b4cf912 [none]
+[debug] [2026-04-06T15:18:11.750Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/rulesets/9c759b1a-fa05-4132-baf2-b07b3b4cf912 200
+[debug] [2026-04-06T15:18:11.750Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/rulesets/9c759b1a-fa05-4132-baf2-b07b3b4cf912 [omitted]
+[info] i  firestore: uploading rules firestore.rules... 
+[debug] [2026-04-06T15:18:11.751Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:11.751Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:11.752Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/rulesets [none]
+[debug] [2026-04-06T15:18:11.752Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/rulesets [omitted]
+[debug] [2026-04-06T15:18:12.047Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/rulesets 200
+[debug] [2026-04-06T15:18:12.047Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/rulesets {"name":"projects/ai-studio-applet-webapp-e38af/rulesets/98d3ec1f-2c08-449a-938d-aa006a29c8de","source":{"files":[{"content":"rules_version = '2';\r\nservice cloud.firestore {\r\n  match /databases/{database}/documents {\r\n    function isAdmin() {\r\n      return request.auth != null && (\r\n        (request.auth.token.email in ['tonyb@brownsitsolutions.services', 'brownsitsolutionsservices@gmail.com'] && request.auth.token.email_verified == true) ||\r\n        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'\r\n      );\r\n    }\r\n\r\n    match /appointments/{appointmentId} {\r\n      allow create: if true;\r\n      allow read, update, delete: if isAdmin();\r\n    }\r\n    match /public_slots/{slotId} {\r\n      allow read, create: if true;\r\n      allow update, delete: if isAdmin();\r\n    }\r\n    match /users/{userId} {\r\n      allow read, write: if isAdmin();\r\n    }\r\n    match /insights/{insightId} {\r\n      allow read: if true;\r\n      allow write: if isAdmin();\r\n    }\r\n  }\r\n}\r\n","name":"firestore.rules"}]},"createTime":"2026-04-06T15:18:11.846191Z","metadata":{"services":["cloud.firestore"]}}
+[debug] [2026-04-06T15:18:12.047Z] [rules] created ruleset projects/ai-studio-applet-webapp-e38af/rulesets/98d3ec1f-2c08-449a-938d-aa006a29c8de
+[info] i  firestore: deploying indexes... 
+[debug] [2026-04-06T15:18:12.048Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:12.048Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:12.049Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/billingInfo [none]
+[debug] [2026-04-06T15:18:12.279Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/billingInfo 200
+[debug] [2026-04-06T15:18:12.279Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/billingInfo {"name":"projects/ai-studio-applet-webapp-e38af/billingInfo","projectId":"ai-studio-applet-webapp-e38af","billingAccountName":"billingAccounts/01E2CF-B70F00-7A2DED","billingEnabled":true}
+[debug] [2026-04-06T15:18:12.280Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2026-04-06T15:18:12.280Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:12.280Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:12.280Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions [none]
+[debug] [2026-04-06T15:18:12.280Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions  x-goog-user-project=ai-studio-applet-webapp-e38af
+[debug] [2026-04-06T15:18:12.280Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2026-04-06T15:18:12.358Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions 200
+[debug] [2026-04-06T15:18:12.358Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2026-04-06T15:18:12.358Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2026-04-06T15:18:12.358Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:12.358Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:12.358Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2026-04-06T15:18:12.359Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2026-04-06T15:18:19.857Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2026-04-06T15:18:19.857Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-1023109002863.us-central1.cloudfunctions.appspot.com/70b50aa2-e113-47d5-921b-81572ab3c332.zip?GoogleAccessId=service-687718948845@gcf-admin-robot.iam.gserviceaccount.com&Expires=1775490499&Signature=tjxvOYbtmYhei6AY01ddbms4Etjp4DJrEYsVPEJN9WdLdO%2FgnKzgSZaXfz5jmTCarQOAv6b%2FQw5jIavYj%2FNlRN%2FPmDalE1QV4XdbqLKf%2Btz2XMjuDs8WVwCafJ4r2cAJsDMsdHfnNRohLc%2F6YGoj1bYSo9B4ZDXyQiKa9tqMHfm%2BB7IrLHus62r8XTY1dSH3VJe3LCM%2FAXR4d2JPKL7rRroEMahjbCyOEPldnxYO3Oi2y49ozCszOIkw4TEwhHPxoQQiCI%2FuLf8LyJ8Q3ILIKm7iFkcMC9YDFSp0RuoqNpkQrf%2FXtXclijsz%2BFBRQtMMl0R%2ByPHmjkTvKFCE04XjcA%3D%3D"}
+[debug] [2026-04-06T15:18:19.857Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-1023109002863.us-central1.cloudfunctions.appspot.com/70b50aa2-e113-47d5-921b-81572ab3c332.zip GoogleAccessId=service-687718948845%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1775490499&Signature=tjxvOYbtmYhei6AY01ddbms4Etjp4DJrEYsVPEJN9WdLdO%2FgnKzgSZaXfz5jmTCarQOAv6b%2FQw5jIavYj%2FNlRN%2FPmDalE1QV4XdbqLKf%2Btz2XMjuDs8WVwCafJ4r2cAJsDMsdHfnNRohLc%2F6YGoj1bYSo9B4ZDXyQiKa9tqMHfm%2BB7IrLHus62r8XTY1dSH3VJe3LCM%2FAXR4d2JPKL7rRroEMahjbCyOEPldnxYO3Oi2y49ozCszOIkw4TEwhHPxoQQiCI%2FuLf8LyJ8Q3ILIKm7iFkcMC9YDFSp0RuoqNpkQrf%2FXtXclijsz%2BFBRQtMMl0R%2ByPHmjkTvKFCE04XjcA%3D%3D
+[debug] [2026-04-06T15:18:19.858Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-1023109002863.us-central1.cloudfunctions.appspot.com/70b50aa2-e113-47d5-921b-81572ab3c332.zip [stream]
+[debug] [2026-04-06T15:18:20.376Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-1023109002863.us-central1.cloudfunctions.appspot.com/70b50aa2-e113-47d5-921b-81572ab3c332.zip 200
+[debug] [2026-04-06T15:18:20.376Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-1023109002863.us-central1.cloudfunctions.appspot.com/70b50aa2-e113-47d5-921b-81572ab3c332.zip [omitted]
+[info] +  functions: functions source uploaded successfully 
+[info] i  hosting[ai-studio-applet-webapp-e38af]: beginning deploy... 
+[info] i  hosting[ai-studio-applet-webapp-e38af]: found 2 files in public 
+[debug] [2026-04-06T15:18:20.388Z] [hosting] uploading with 200 concurrency
+[debug] [2026-04-06T15:18:20.388Z] [hosting] hash cache [cHVibGlj] not populated
+[debug] [2026-04-06T15:18:20.391Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:20.392Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:20.393Z] [hosting] hash cache [cHVibGlj] stored for 2 files
+[debug] [2026-04-06T15:18:20.394Z] [hosting][hash queue][FINAL] {"max":2,"min":1,"avg":1.5,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":5}
+[debug] [2026-04-06T15:18:20.394Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/687718948845/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582:populateFiles [none]
+[debug] [2026-04-06T15:18:20.394Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/687718948845/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582:populateFiles {"files":{"/404.html":"762bf484ba67404bd1a3b181546ea28d60dfddf18e9dd4795d8d25bcf3c1a890","/index.html":"dde85a680f9c7c64d7cd7b3c2fec497986465ebeaba84f0f99e675da11bb96f2"}}
+[debug] [2026-04-06T15:18:20.953Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/687718948845/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582:populateFiles 200
+[debug] [2026-04-06T15:18:20.953Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/687718948845/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582:populateFiles {"uploadRequiredHashes":["762bf484ba67404bd1a3b181546ea28d60dfddf18e9dd4795d8d25bcf3c1a890","dde85a680f9c7c64d7cd7b3c2fec497986465ebeaba84f0f99e675da11bb96f2"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582/files"}
+[debug] [2026-04-06T15:18:20.954Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:20.954Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:20.954Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:20.954Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:20.954Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582/files/762bf484ba67404bd1a3b181546ea28d60dfddf18e9dd4795d8d25bcf3c1a890 [none]
+[debug] [2026-04-06T15:18:20.954Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582/files/762bf484ba67404bd1a3b181546ea28d60dfddf18e9dd4795d8d25bcf3c1a890 [stream]
+[debug] [2026-04-06T15:18:20.955Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582/files/dde85a680f9c7c64d7cd7b3c2fec497986465ebeaba84f0f99e675da11bb96f2 [none]
+[debug] [2026-04-06T15:18:20.955Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582/files/dde85a680f9c7c64d7cd7b3c2fec497986465ebeaba84f0f99e675da11bb96f2 [stream]
+[debug] [2026-04-06T15:18:20.956Z] [hosting][populate queue][FINAL] {"max":563,"min":563,"avg":563,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":565}
+[debug] [2026-04-06T15:18:20.956Z] [hosting] uploads queued: 2
+[debug] [2026-04-06T15:18:21.588Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582/files/762bf484ba67404bd1a3b181546ea28d60dfddf18e9dd4795d8d25bcf3c1a890 200
+[debug] [2026-04-06T15:18:21.589Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582/files/762bf484ba67404bd1a3b181546ea28d60dfddf18e9dd4795d8d25bcf3c1a890 [stream]
+[debug] [2026-04-06T15:18:21.687Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582/files/dde85a680f9c7c64d7cd7b3c2fec497986465ebeaba84f0f99e675da11bb96f2 200
+[debug] [2026-04-06T15:18:21.687Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ai-studio-applet-webapp-e38af/versions/919923578add4582/files/dde85a680f9c7c64d7cd7b3c2fec497986465ebeaba84f0f99e675da11bb96f2 [stream]
+[debug] [2026-04-06T15:18:21.687Z] [hosting][upload queue][FINAL] {"max":733,"min":636,"avg":684.5,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":734}
+[info] +  hosting[ai-studio-applet-webapp-e38af]: file upload complete 
+[debug] [2026-04-06T15:18:21.688Z] [hosting] deploy completed after 1309ms
+[debug] [2026-04-06T15:18:21.688Z] [rules] releasing cloud.firestore/(default) with ruleset projects/ai-studio-applet-webapp-e38af/rulesets/98d3ec1f-2c08-449a-938d-aa006a29c8de
+[debug] [2026-04-06T15:18:21.688Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:21.688Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:21.688Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore/(default) [none]
+[debug] [2026-04-06T15:18:21.688Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore/(default) {"release":{"name":"projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore/(default)","rulesetName":"projects/ai-studio-applet-webapp-e38af/rulesets/98d3ec1f-2c08-449a-938d-aa006a29c8de"}}
+[debug] [2026-04-06T15:18:21.895Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore/(default) 404
+[debug] [2026-04-06T15:18:21.895Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore/(default) {"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}}
+[debug] [2026-04-06T15:18:21.895Z] [rules] ruleset update failed, attempting to create instead
+[debug] [2026-04-06T15:18:21.895Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:21.895Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:21.895Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases [none]
+[debug] [2026-04-06T15:18:21.895Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases {"name":"projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore/(default)","rulesetName":"projects/ai-studio-applet-webapp-e38af/rulesets/98d3ec1f-2c08-449a-938d-aa006a29c8de"}
+[debug] [2026-04-06T15:18:22.250Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases 200
+[debug] [2026-04-06T15:18:22.250Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/releases {"name":"projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore","rulesetName":"projects/ai-studio-applet-webapp-e38af/rulesets/98d3ec1f-2c08-449a-938d-aa006a29c8de","createTime":"2026-04-06T15:18:22.049188Z","updateTime":"2026-04-06T15:18:22.049188Z"}
+[debug] [2026-04-06T15:18:22.250Z] [rules] created release projects/ai-studio-applet-webapp-e38af/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[info] i  functions: creating Node.js 20 (1st Gen) function sendEmail(us-central1)... 
+[debug] [2026-04-06T15:18:22.253Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:22.253Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:22.253Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions [none]
+[debug] [2026-04-06T15:18:22.253Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions {"name":"projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions/sendEmail","sourceUploadUrl":"https://storage.googleapis.com/uploads-1023109002863.us-central1.cloudfunctions.appspot.com/70b50aa2-e113-47d5-921b-81572ab3c332.zip?GoogleAccessId=service-687718948845@gcf-admin-robot.iam.gserviceaccount.com&Expires=1775490499&Signature=tjxvOYbtmYhei6AY01ddbms4Etjp4DJrEYsVPEJN9WdLdO%2FgnKzgSZaXfz5jmTCarQOAv6b%2FQw5jIavYj%2FNlRN%2FPmDalE1QV4XdbqLKf%2Btz2XMjuDs8WVwCafJ4r2cAJsDMsdHfnNRohLc%2F6YGoj1bYSo9B4ZDXyQiKa9tqMHfm%2BB7IrLHus62r8XTY1dSH3VJe3LCM%2FAXR4d2JPKL7rRroEMahjbCyOEPldnxYO3Oi2y49ozCszOIkw4TEwhHPxoQQiCI%2FuLf8LyJ8Q3ILIKm7iFkcMC9YDFSp0RuoqNpkQrf%2FXtXclijsz%2BFBRQtMMl0R%2ByPHmjkTvKFCE04XjcA%3D%3D","entryPoint":"sendEmail","runtime":"nodejs20","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"470bb3a232250d3f2f0991fda945815535594300"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"ai-studio-applet-webapp-e38af\",\"storageBucket\":\"ai-studio-applet-webapp-e38af.firebasestorage.app\"}","GCLOUD_PROJECT":"ai-studio-applet-webapp-e38af","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions/sendEmail"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null,"buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}}
+[debug] [2026-04-06T15:18:22.765Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions 403
+[debug] [2026-04-06T15:18:22.766Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions {"error":{"code":403,"message":"Failed to create 1st Gen function projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions/sendEmail: Unable to retrieve the repository metadata for projects/ai-studio-applet-webapp-e38af/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.","status":"PERMISSION_DENIED"}}
+[warn] !  functions: failed to create function projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions/sendEmail 
+[error] Failed to create function projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions/sendEmail
+[debug] [2026-04-06T15:18:22.771Z] Total Function Deployment time: 515
+[debug] [2026-04-06T15:18:22.771Z] 1 Functions Deployed
+[debug] [2026-04-06T15:18:22.771Z] 1 Functions Errored
+[debug] [2026-04-06T15:18:22.771Z] 0 Function Deployments Aborted
+[debug] [2026-04-06T15:18:22.771Z] Average Function Deployment time: 514
+[info] 
+[info] Functions deploy had errors with the following functions:
+	sendEmail(us-central1)
+[debug] [2026-04-06T15:18:22.847Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[debug] [2026-04-06T15:18:22.848Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:22.848Z] Checked if tokens are valid: true, expires at: 1775491527123
+[debug] [2026-04-06T15:18:22.848Z] >>> [apiv2][query] GET https://artifactregistry.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/repositories/gcf-artifacts [none]
+[debug] [2026-04-06T15:18:23.197Z] <<< [apiv2][status] GET https://artifactregistry.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/repositories/gcf-artifacts 404
+[debug] [2026-04-06T15:18:23.197Z] <<< [apiv2][body] GET https://artifactregistry.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/repositories/gcf-artifacts {"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}}
+[debug] [2026-04-06T15:18:23.197Z] Failed to check artifact cleanup policy for region us-central1: Request to https://artifactregistry.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/repositories/gcf-artifacts had HTTP Error: 404, Requested entity was not found. {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://artifactregistry.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/repositories/gcf-artifacts had HTTP Error: 404, Requested entity was not found.","status":404}
+[debug] [2026-04-06T15:18:23.198Z] Functions deploy failed.
+[debug] [2026-04-06T15:18:23.198Z] {
+  "endpoint": {
+    "id": "sendEmail",
+    "project": "ai-studio-applet-webapp-e38af",
+    "region": "us-central1",
+    "entryPoint": "sendEmail",
+    "platform": "gcfv1",
+    "runtime": "nodejs20",
+    "httpsTrigger": {},
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"ai-studio-applet-webapp-e38af\",\"storageBucket\":\"ai-studio-applet-webapp-e38af.firebasestorage.app\"}",
+      "GCLOUD_PROJECT": "ai-studio-applet-webapp-e38af",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions/sendEmail"
+    },
+    "codebase": "default",
+    "targetedByOnly": false,
+    "hash": "470bb3a232250d3f2f0991fda945815535594300",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions/sendEmail"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions/sendEmail",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 403,
+            "message": "Failed to create 1st Gen function projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions/sendEmail: Unable to retrieve the repository metadata for projects/ai-studio-applet-webapp-e38af/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+            "status": "PERMISSION_DENIED"
+          }
+        },
+        "response": {
+          "statusCode": 403
+        }
+      },
+      "exit": 1,
+      "message": "Request to https://cloudfunctions.googleapis.com/v1/projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions had HTTP Error: 403, Failed to create 1st Gen function projects/ai-studio-applet-webapp-e38af/locations/us-central1/functions/sendEmail: Unable to retrieve the repository metadata for projects/ai-studio-applet-webapp-e38af/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+      "status": 403
+    },
+    "status": 403,
+    "code": 403
+  }
+}
+[debug] [2026-04-06T15:18:23.224Z] Error: Failed to create function sendEmail in region us-central1
+    at C:\Users\tonyb\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:54:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Fabricator.createV1Function (C:\Users\tonyb\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:194:32)
+    at async Fabricator.createEndpoint (C:\Users\tonyb\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:137:13)
+    at async handle (C:\Users\tonyb\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:92:17)
+[error] 
+[error] Error: There was an error deploying functions

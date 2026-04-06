@@ -9,24 +9,11 @@
     ]
   },
   "hosting": {
-    "public": "dist",
-    "predeploy": [
-      "npm run build"
-    ],
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "/api/send-email",
-        "function": "sendEmail"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }
