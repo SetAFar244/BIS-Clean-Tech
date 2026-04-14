@@ -139,6 +139,11 @@ Keep your responses concise, conversational, and helpful. Do not sound robotic.`
             setIsConnecting(false);
           },
           onmessage: async (message: LiveServerMessage) => {
+            // iOS fix: Proactively resume context on incoming message
+            if (audioContextRef.current?.state === 'suspended') {
+              audioContextRef.current.resume().catch(console.warn);
+            }
+
             const base64Audio = message.serverContent?.modelTurn?.parts[0]?.inlineData?.data;
             if (base64Audio) {
               player.play(base64Audio);

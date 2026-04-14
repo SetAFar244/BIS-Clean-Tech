@@ -9,6 +9,9 @@ export class AudioRecorder {
   }
 
   async start(onData: (base64: string) => void) {
+    if (this.context.state === 'suspended') {
+      await this.context.resume();
+    }
     this.stream = await navigator.mediaDevices.getUserMedia({
       audio: {
         channelCount: 1,
@@ -77,12 +80,34 @@ export class AudioPlayer {
   public onPlayStart?: () => void;
   public onPlayEnd?: () => void;
   private activeSources = 0;
+  private keepAliveOsc: OscillatorNode | null = null;
 
   constructor(context: AudioContext) {
     this.context = context;
   }
 
+  private startKeepAlive() {
+    if (this.keepAliveOsc) return;
+    try {
+      const osc = this.context.createOscillator();
+      const gain = this.context.createGain();
+      gain.gain.value = 0.0001; // Inaudible
+      osc.connect(gain);
+      gain.connect(this.context.destination);
+      osc.start();
+      this.keepAliveOsc = osc;
+    } catch (e) {
+      console.warn("Could not start keep-alive oscillator", e);
+    }
+  }
+
   play(base64: string) {
+    // iOS fix: Ensure context is running
+    if (this.context.state === 'suspended') {
+      this.context.resume();
+    }
+    this.startKeepAlive();
+
     const binary = atob(base64);
     const bytes = new Uint8Array(binary.length);
     for (let i = 0; i < binary.length; i++) {
@@ -103,8 +128,10 @@ export class AudioPlayer {
     source.connect(this.context.destination);
 
     const currentTime = this.context.currentTime;
-    if (this.nextTime < currentTime) {
-      this.nextTime = currentTime;
+    // iOS/Mobile fix: Add a small lookahead (50ms) to prevent choppy audio
+    const lookahead = 0.05; 
+    if (this.nextTime < currentTime + lookahead) {
+      this.nextTime = currentTime + lookahead;
     }
 
     source.start(this.nextTime);
@@ -133,6 +160,10 @@ export class AudioPlayer {
     this.sources = [];
     this.nextTime = 0;
     this.activeSources = 0;
+    if (this.keepAliveOsc) {
+      try { this.keepAliveOsc.stop(); } catch (e) {}
+      this.keepAliveOsc = null;
+    }
     if (this.onPlayEnd) this.onPlayEnd();
   }
 }
