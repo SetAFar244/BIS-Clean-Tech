@@ -38,9 +38,9 @@ export default function App() {
           </div>
           
           <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-sm font-medium text-slate-400 z-0">
-            <a href="tel:+16785925243" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
+            <a href="tel:+14708277019" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
               <Phone className="w-4 h-4" />
-              (678) 592-5243
+              (470) 827-7019
             </a>
             <a href="mailto:info@brownsitsolutions.services" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
               <Mail className="w-4 h-4" />
